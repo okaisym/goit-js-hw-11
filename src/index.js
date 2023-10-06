@@ -97,14 +97,12 @@ async function onClickSearch(event) {
 function displayImages(images) {
    gallery.innerHTML = '';
     images.forEach((image) => {
-        const aEl = document.createElement('a');
-        aEl.href = image.largeImgeURL;
-        aEl.setAttribute('data-lightbox', 'gallery');
-        const imgEl = document.createElement('img');
+       const imgEl = document.createElement('img');
         const divEl = document.createElement('div');
         divEl.classList.add("photo-card");
         divEl.innerHTML = `
-<img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
+        <a href=${image.largeImgeURL} data-lighbox="gallery">
+<img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" /></a>
 <div class="info">
 <p class="info-item"><b>Likes:</b>${image.likes}</p> 
 <p class="info-item"><b>Views:</b>${image.views}</p>
