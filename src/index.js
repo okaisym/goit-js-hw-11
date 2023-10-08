@@ -51,8 +51,9 @@ async function onLoadMore() {
             displayImages(nextPageResponse.hits);
             updateLoadMoreBtn(nextPageResponse.totalHits);
             if (!isFirstLoad) {
-                Notiflix.Notify.success("Hooray! We found some more images for you.");
+                Notiflix.Notify.success("Hooray! We found these images by your request.");
             }
+            Notiflix.Notify.success("Look! We found some more pictures for you!")
             lightbox.refresh();
             window.scrollTo({
                 top: 0,
