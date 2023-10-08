@@ -54,6 +54,7 @@ async function onLoadMore() {
                 Notiflix.Notify.success("Hooray! We found some more images for you.");
             }
             lightbox.refresh();
+            
         } else {
             loadMoreBtn.style.display = 'none';
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.")
@@ -101,19 +102,20 @@ function displayImages(images) {
         const divEl = document.createElement('div');
         divEl.classList.add("photo-card");
         divEl.innerHTML = `
-        <a href=${image.largeImgeURL} data-lighbox="gallery">
-<img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" /></a>
+        <a href=${image.largeImageURL} data-lighbox="gallery">
+<img src="${image.webformatURL}" alt="${image.tags}" width="300" height="150" loading="lazy" /></a>
 <div class="info">
-<p class="info-item"><b>Likes:</b>${image.likes}</p> 
-<p class="info-item"><b>Views:</b>${image.views}</p>
-<p class="info-item"><b>Comments:</b>${image.comments}</p>
-<p class="image.downloads"><b>Downloads:</b>${image.comments}</p>
+<p class="info-item"><br><b>Likes: </b></br>${image.likes}</p> 
+<p class="info-item"><br><b>Views: </b></br>${image.views}</p>
+<p class="info-item"><br><b>Comments: </b></br>${image.comments}</p>
+<p class="image.downloads info-item"><br><b>Downloads: </b></br>${image.comments}</p>
         </div>`;
         gallery.appendChild(divEl);
         imgEl.addEventListener('click', () => {
             openLargeImg(image.largeImgeURL, image.tags);
         });
-    });
+    });    
+
     // Notiflix.Notify.success("Hooray! We found these images by your request.")
     };
 
@@ -130,4 +132,5 @@ function updateLoadMoreBtn(totalHits) {
         // Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`)
     }
 }
+
 
