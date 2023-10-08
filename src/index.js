@@ -54,7 +54,10 @@ async function onLoadMore() {
                 Notiflix.Notify.success("Hooray! We found some more images for you.");
             }
             lightbox.refresh();
-            
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
         } else {
             loadMoreBtn.style.display = 'none';
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.")
@@ -105,10 +108,10 @@ function displayImages(images) {
         <a href=${image.largeImageURL} data-lighbox="gallery">
 <img src="${image.webformatURL}" alt="${image.tags}" width="300" height="150" loading="lazy" /></a>
 <div class="info">
-<p class="info-item"><br><b>Likes: </b></br>${image.likes}</p> 
-<p class="info-item"><br><b>Views: </b></br>${image.views}</p>
-<p class="info-item"><br><b>Comments: </b></br>${image.comments}</p>
-<p class="image.downloads info-item"><br><b>Downloads: </b></br>${image.comments}</p>
+<p class="info-item"><br><b class=styleDescr>Likes </b></br><span class="numDescr">${image.likes}</span></p> 
+<p class="info-item"><br><b class=styleDescr>Views </b></br><span class="numDescr">${image.views}</span></p>
+<p class="info-item"><br><b class=styleDescr>Comments </b></br><span class="numDescr">${image.comments}</span></p>
+<p class="image.downloads info-item"><br><b class=styleDescr>Downloads </b></br><span class="numDescr">${image.comments}</span></p>
         </div>`;
         gallery.appendChild(divEl);
         imgEl.addEventListener('click', () => {

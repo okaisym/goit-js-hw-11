@@ -25,6 +25,7 @@ body {
 
 .info {
     display: flex;
+    justify-content: center;
 }
 
 .search-form {
@@ -33,7 +34,7 @@ body {
     display: flex;
     position: relative;
     width: 100%;
-   
+
 }
 
 .btn-submit {
@@ -43,7 +44,7 @@ body {
     outline: none;
     border-radius: 3px;
     border: none;
-    color:white;
+    color: white;
     right: 40px;
 }
 
@@ -61,15 +62,15 @@ body {
 .inputForm::placeholder {
     color: white;
     opacity: 70%;
-  }
+}
 
 .icon-search {
     width: 1em;
     height: 1em;
-    stroke-width: 2; 
-    fill:  white; 
-    vertical-align: middle; 
-    
+    stroke-width: 2;
+    fill: white;
+    vertical-align: middle;
+
 }
 
 .load-more {
@@ -77,9 +78,31 @@ body {
     border-radius: 3px;
     border: none;
     outline: none;
-    height: 30px;
-    width: 100px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+    height: 40px;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
 }
+
+.btnLoadContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.photo-card {
+    border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    background-color: white;
+}
+
+.styleDescr {
+    color: #67bdff;
+}
+
+.numDescr {
+    font-size: 10px;
+} 
